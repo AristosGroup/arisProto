@@ -1,0 +1,27 @@
+/* Higher than 1200 (desktop devices)
+====================================================================== */
+@media (min-width: 1200px) {
+
+    #content {
+        padding: 20px;
+        margin-left: -2px;
+    }
+
+    #sidebar-left {
+        background: transparent;
+        margin: -1px 0px 0px 25px;
+        padding-top: 0px;
+    }
+
+    .sidebar-nav > ul{
+        margin: 0px 0px 0px -20px;
+    }
+
+    footer {
+        margin: 20px -20px 0px -20px;
+        padding: 10px 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+}
