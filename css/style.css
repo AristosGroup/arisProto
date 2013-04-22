@@ -1,3 +1,15 @@
+#content {
+    background: #ffffff;
+    filter: none;
+    min-height: 100%;
+    padding: 20px 20px;
+    -webkit-border-radius: 0px 5px 5px 5px;
+    -moz-border-radius: 0px 5px 5px 5px;
+    border-radius: 0px 5px 5px 5px;
+    border: 2px solid #eee;
+    position: relative;
+}
+
 /* Navigation Section
 =================================================================== */
 
@@ -142,4 +154,18 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+}
+
+
+
+
+.filters-sidebar {
+    border-right: 2px solid #eee ;
+    min-height: 100%;
+    padding: 20px;
+}
+
+
+ul.issue-list {
+    list-style: none;
 }
