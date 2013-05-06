@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+
+    "name": "Aristos Pm",
+    "version": "1.0",
+
+    "icons": {
+        "48": "48x48.png",
+        "16": "48x48.png"
+    },
+
+        "permissions": [
+             "http://pm.proaristos.ru/*",
+            "background",
+            "activeTab",
+            "clipboardRead",
+            "clipboardWrite",
+            "contextMenus",
+            "notifications",
+            "storage"
+        ],
+
+    "browser_action": {
+        "default_title": "Создать задачу",
+        "default_icon": "48x48.png",
+        "default_popup": "issue.html"
+    },
+
+    "background": {
+        "scripts": ["main.js"]
+    }
+ }
