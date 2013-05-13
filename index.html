@@ -31,6 +31,7 @@
 </head>
 
 <body>
+<div id="aris">
 <!-- start: Header -->
 <div class="navbar">
     <div class="navbar-inner">
@@ -138,15 +139,11 @@
 
     <div class="clearfix"></div>
 
-    <ul class="issue-list">
-        <li class="issue ">
-            <span><input type="checkbox"></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </li>
-    </ul>
+    <div id="main">
+    <ul class="issue-list" id="issues">
 
+    </ul>
+    </div>
 
 </div>
 
@@ -163,7 +160,7 @@
 
 <div class="clearfix"></div>
 
-<footer>
+<footer id="footer">
     <p>
         <span style="text-align:left;float:left">&copy; <a href="" target="_blank">AristosGroup</a> 2013</span>
             <span class="hidden-phone" style="text-align:right;float:right">Powered by: <a
@@ -175,12 +172,35 @@
 </div>
 <!--/.fluid-container-->
 
-<!-- start: JavaScript-->
 
+</div>
+
+<!-- templates -->
+<script type="text/template" id="item-template">
+    <div class="issue">
+        <span><%- subject %></span>
+    </div>
+
+</script>
+
+<!-- start: JavaScript-->
+<script src="js/vendor/json2.js"></script>
 <script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/underscore.js"></script>
+<script src="js/vendor/backbone.js"></script>
+
+<script src="js/models/issue.js"></script>
+<script src="js/collections/issues.js"></script>
+<script src="js/views/issue.js"></script>
+<script src="js/views/app.js"></script>
+<script src="js/routers/router.js"></script>
+<script src="js/app.js"></script>
 
 
 <script src="js/vendor/bootstrap.js"></script>
+
+
+
 
 
 </body>
