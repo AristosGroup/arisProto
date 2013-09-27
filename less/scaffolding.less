@@ -7,47 +7,40 @@
 // -------------------------
 
 body {
-  margin: 0;
-  font-family: @baseFontFamily;
-  font-size: @baseFontSize;
-  line-height: @baseLineHeight;
-  color: @textColor;
-  background-color: @bodyBackground;
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
 }
-
 
 // Links
 // -------------------------
 
 a {
-  color: @linkColor;
+  color: @link-color;
   text-decoration: none;
+  .transition(.25s);
+    
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
 }
-a:hover,
-a:focus {
-  color: @linkColorHover;
-  text-decoration: underline;
-}
-
 
 // Images
 // -------------------------
 
 // Rounded corners
 .img-rounded {
-  .border-radius(6px);
+  border-radius: @border-radius-large;
 }
 
-// Add polaroid-esque trim
-.img-polaroid {
-  padding: 4px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0,0,0,.2);
-  .box-shadow(0 1px 3px rgba(0,0,0,.1));
-}
-
-// Perfect circle
-.img-circle {
-  .border-radius(500px); // crank the border-radius so it works with most reasonably sized images
+// Description text under image
+.img-comment {
+  font-size: ceil(@font-size-base * 1.071); // ~15px
+  line-height: @line-height-base;
+  font-style: italic;
+  margin: 24px 0;
 }
