@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Flat UI</title>
+    <title>Olympus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Loading Flat UI -->
-    <link href="css/flat-ui.css" rel="stylesheet">
     <link href="css/aris.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -23,14 +23,87 @@
     <div class="container-full">
         <div class="row content">
             <div class="col-lg-2 col-sm-2 content-col">
-            <div id="sidebar">fg</div>
+            <div id="sidebar">
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-chevron-down"></span></button>
+      </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
 
             </div>
-            <div class="col-lg-6 col-sm-6 content-col"  id="center">
-                <div id="header"></div>
+
             </div>
-            <div class="col-lg-4 col-sm-4 content-col" id="detail">
-                <div id="detail_header"></div>
+            <div class="col-lg-5 col-sm-5 content-col"  id="center">
+                <div id="header">
+                    <h2>Olympus</h2>
+                    <div id="project_description"></div>
+                </div>
+
+                <div id="toolbar">
+                    <div class="btn-group  btn-group-flat btn-group-sm">
+                        <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span> Sort</button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Dropdown link</a></li>
+                                <li><a href="#">Dropdown link</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span> Filter</button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Dropdown link</a></li>
+                                <li><a href="#">Dropdown link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="grid">
+                    <div class="row">
+                        <div class="col-lg-1 col col-number">1</div>
+                        <div class="col-lg-1 col col-assig">1</div>
+                        <div class="col-lg-1 col col-status">1</div>
+                        <div class="col-lg-9 col col-title"><div>Если открыть вкладку отзывы - перестает работать кнопка в корзину</div><div></div></div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-5 col-sm-5 content-col" id="detail">
+                <div id="detail_header">
+
+                    <div class="btn-group  btn-group-flat">
+                        <button type="button" class="btn btn-default btn-customer"><span class="glyphicon glyphicon-user"></span> Unassigned</button>
+                        <button type="button" class="btn btn-default btn-due-date"><span class="glyphicon glyphicon-calendar"></span> Due date</button>
+                        <button type="button" class="btn btn-default btn-subtask"><span class="glyphicon glyphicon-tasks"></span></button>
+                        <button type="button" class="btn btn-default btn-tags"><span class="glyphicon glyphicon-tags"></span></button>
+                        <button type="button" class="btn btn-default btn-attachments"><span class="glyphicon glyphicon-paperclip"></span></button>
+                        <button type="button" class="btn btn-default btn-share"><span class="glyphicon glyphicon-heart"></span></button>
+                        <button type="button" class="btn btn-default btn-time"><span class="glyphicon glyphicon-time"></span></button>
+                        <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                        </ul>
+                            </div>
+
+                        <button type="button" class="btn btn-default pull-right" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+                    </div>
+
+                    <div id="detail_projects">
+
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -39,15 +112,11 @@
 
 
     <!-- Load JS here for greater good =============================-->
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
     <script src="js/jquery.ui.touch-punch.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/bootstrap-switch.js"></script>
-    <script src="js/flatui-checkbox.js"></script>
-    <script src="js/flatui-radio.js"></script>
-    <script src="js/jquery.tagsinput.js"></script>
-    <script src="js/jquery.placeholder.js"></script>
+
+
   </body>
 </html>
