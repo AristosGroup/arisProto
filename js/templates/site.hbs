@@ -1,5 +1,92 @@
-<h1>Chaplin Boilerplate Application</h1>
+<div class="container-full">
+    <div class="row content">
+        <div class="col-lg-2 col-sm-2 content-col">
+            <div id="sidebar">
 
-<p>This Chaplin example provides an app scaffold using RequireJS as module loader. Handlebars is used as templating engine. The templates are loaded on demand using the RequireJS text plugin.</p>
 
-<div id="main-container"></div>
+            </div>
+
+        </div>
+        <div class="col-lg-5 col-sm-5 content-col"  id="center">
+            <div id="header">
+                <h2>Olympus</h2>
+                <div id="project_description"></div>
+            </div>
+
+            <div id="toolbar">
+                <div class="btn-group  btn-group-flat btn-group-sm">
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span> Sort</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span> Filter</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="grid">
+
+                <div class="row">
+                    <div class="col-lg-1 col col-number">1</div>
+                    <div class="col-lg-1 col col-assig">1</div>
+                    <div class="col-lg-1 col col-status">1</div>
+                    <div class="col-lg-9 col col-title"><div>{{item}}</div><div></div></div>
+
+
+                </div>
+
+
+
+            </div>
+
+            <div id="main-container"></div>
+
+
+
+
+
+
+
+        </div>
+        <div class="col-lg-5 col-sm-5 content-col" id="detail">
+            <div id="detail_header">
+
+                <div class="btn-group  btn-group-flat">
+                    <button type="button" class="btn btn-default btn-customer"><span class="glyphicon glyphicon-user"></span> Unassigned</button>
+                    <button type="button" class="btn btn-default btn-due-date"><span class="glyphicon glyphicon-calendar"></span> Due date</button>
+                    <button type="button" class="btn btn-default btn-subtask"><span class="glyphicon glyphicon-tasks"></span></button>
+                    <button type="button" class="btn btn-default btn-tags"><span class="glyphicon glyphicon-tags"></span></button>
+                    <button type="button" class="btn btn-default btn-attachments"><span class="glyphicon glyphicon-paperclip"></span></button>
+                    <button type="button" class="btn btn-default btn-share"><span class="glyphicon glyphicon-heart"></span></button>
+                    <button type="button" class="btn btn-default btn-time"><span class="glyphicon glyphicon-time"></span></button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="btn btn-default pull-right" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
+
+                <div id="detail_projects">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

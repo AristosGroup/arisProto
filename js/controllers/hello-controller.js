@@ -1,8 +1,9 @@
 define([
   'controllers/base/controller',
   'models/hello-world',
-  'views/hello-world-view'
-], function(Controller, HelloWorld, HelloWorldView) {
+  'views/hello-world-view',
+  'views/sidebar-view'
+], function(Controller, HelloWorld, HelloWorldView, SidebarView) {
   'use strict';
 
   var HelloWorldController = Controller.extend({
@@ -12,6 +13,11 @@ define([
         model: this.model,
         region: 'main'
       });
+
+        this.view2 = new SidebarView({
+
+            region: 'sidebar'
+        });
     }
   });
 
