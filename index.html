@@ -9,11 +9,48 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-theme.css" rel="stylesheet">
 
-    <!-- Loading Flat UI -->
     <link href="css/aris.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/favicon.ico">
+      <script src="bower_components/requirejs/require.js"></script>
+      <script>
+          // Configure the AMD module loader
+          requirejs.config({
+              // The path where your JavaScripts are located
+              baseUrl: './js/',
+              // Specify the paths of vendor libraries
+              paths: {
+                  jquery: '../bower_components/jquery/jquery',
+                  bootstrap: '../bower_components/bootstrap/bootstrap',
+                  underscore: '../bower_components/lodash/dist/lodash',
+                  backbone: '../bower_components/backbone/backbone',
+                  handlebars: '../bower_components/handlebars/handlebars',
+                  text: '../bower_components/requirejs-text/text',
+                  chaplin: '../bower_components/chaplin/chaplin'
+              },
+              // Underscore and Backbone are not AMD-capable per default,
+              // so we need to use the AMD wrapping of RequireJS
+              shim: {
+                  underscore: {
+                      exports: '_'
+                  },
+                  backbone: {
+                      deps: ['underscore', 'jquery'],
+                      exports: 'Backbone'
+                  },
+                  handlebars: {
+                      exports: 'Handlebars'
+                  }
+              }
+              // For easier development, disable browser caching
+              // Of course, this should be removed in a production environment
+              //, urlArgs: 'bust=' +  (new Date()).getTime()
+          });
 
+          // Bootstrap the application
+          require(['application', 'routes'], function(Application, routes) {
+              new Application({routes: routes, controllerSuffix: '-controller'});
+          });
+      </script>
 
 
   </head>
@@ -66,23 +103,25 @@
 
 
                 <div id="grid">
+
+                    {{#each item in model}}
                     <div class="row">
                         <div class="col-lg-1 col col-number">1</div>
                         <div class="col-lg-1 col col-assig">1</div>
                         <div class="col-lg-1 col col-status">1</div>
-                        <div class="col-lg-9 col col-title"><div>Если открыть вкладку отзывы - перестает работать кнопка в корзину</div><div></div></div>
+                        <div class="col-lg-9 col col-title"><div>{{item}}</div><div></div></div>
+
 
                     </div>
+                    {{/each}}
+
+
                 </div>
 
 
 
 
-                    <ul>
-                        {{#each item in model}}
-                        <li>{{item}}</li>
-                        {{/each}}
-                    </ul>
+
 
 
             </div>
@@ -120,15 +159,6 @@
     <!-- /.container -->
 
     </script>
-    <!-- Load JS here for greater good =============================-->
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-
-    <script src="js/libs/handlebars-1.0.0.js"></script>
-    <script src="js/libs/ember-1.0.0.js"></script>
-    <script src="js/libs/ember-states.js"></script>
-    <script src="js/libs/ember-data.js"></script>
-    <script src="js/ember_app.js"></script>
 
 
 
