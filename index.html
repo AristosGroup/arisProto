@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Olympus</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -52,8 +52,8 @@
 
           // Bootstrap the application
 
-          require(['application', 'routes','bootstrap'], function(Application, routes) {
-              new Application({routes: routes, controllerSuffix: '-controller',root:'/arisProto/'});
+          require(['application', 'routes', 'bootstrap'], function(Application, routes) {
+              new Application({routes: routes, controllerSuffix: '-controller',root:'/arisProto/',pushState: false});
           });
       </script>
 

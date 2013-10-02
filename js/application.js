@@ -9,5 +9,7 @@ define(['chaplin'], function(Chaplin) {
     title: 'Chaplin Example Application'
   });
 
+   // Chaplin.mediator.publish('!adjustTitle', 'Apple');
+
   return Application;
 });
