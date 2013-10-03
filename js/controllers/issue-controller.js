@@ -11,7 +11,8 @@ define([
 
             this.compose('detail', {
                 compose:function() {
-                    this.model = new Issue();
+
+                    this.model = new Issue({id: params.id});
 
                     this.detail = new DetailView({
 

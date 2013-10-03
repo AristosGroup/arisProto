@@ -10,7 +10,7 @@ define([
     'use strict';
 
     var HelloWorldController = Controller.extend({
-        show: function(params) {
+        index: function(params) {
 
 
         },
@@ -20,7 +20,7 @@ define([
 
 
 
-            this.model = new Issues();
+            this.collection = new Issues();
             var $this = this;
 
             this.compose('site', SiteView);
@@ -29,7 +29,7 @@ define([
                 compose: function() {
 
                     this.view = new GridView({
-                        collection: $this.model,
+                        collection: $this.collection,
                         region:'grid'
                     });
 

@@ -20,8 +20,8 @@ define([
 
 
       url:function() {
-          var options=852;
-        return 'http://pm.proaristos.ru/issues/'+options+'.json?key=1ba9eddec017876adbb2156aafccdc027791bda0';
+
+        return 'http://pm.proaristos.ru/issues/'+this.id+'.json?key=1ba9eddec017876adbb2156aafccdc027791bda0';
       },
 
       parse: function (response) {
