@@ -1,0 +1,13 @@
+<h2>Issue</h2>
+
+<p>
+  <b>Subject:</b> {{ subject }}
+</p>
+
+<p>
+  <b>Status:</b> {{ status }}
+</p>
+
+{{#linkTo "issues"}}←All Issues{{/linkTo}}
+{{#linkTo "edit_issue" model}}Edit{{/linkTo}}
+<a href="#" {{action "destroy"}}>Destroy</a>

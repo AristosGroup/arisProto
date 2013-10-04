@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Philips</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -11,55 +11,151 @@
 
     <link href="css/aris.css" rel="stylesheet">
 
-      <script src="bower_components/requirejs/require.js"></script>
-      <script>
-          // Configure the AMD module loader
-          requirejs.config({
-              // The path where your JavaScripts are located
-              baseUrl: './js/',
-              // Specify the paths of vendor libraries
-              paths: {
-                  jquery: '../bower_components/jquery/jquery',
-                  bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
-                  underscore: '../bower_components/lodash/dist/lodash',
-                  backbone: '../bower_components/backbone/backbone',
-                  handlebars: '../bower_components/handlebars/handlebars',
-                  text: '../bower_components/requirejs-text/text',
-                  chaplin: '../bower_components/chaplin/chaplin'
-              },
-              // Underscore and Backbone are not AMD-capable per default,
-              // so we need to use the AMD wrapping of RequireJS
-              shim: {
-                  underscore: {
-                      exports: '_'
-                  },
-                  backbone: {
-                      deps: ['underscore', 'jquery'],
-                      exports: 'Backbone'
-                  },
-                  handlebars: {
-                      exports: 'Handlebars'
-                  },
-                  bootstrap: {
-
-                      deps: ["jquery"]
-                  }
-              }
-              // For easier development, disable browser caching
-              // Of course, this should be removed in a production environment
-              //, urlArgs: 'bust=' +  (new Date()).getTime()
-          });
-
-          // Bootstrap the application
-
-          require(['application', 'routes', 'bootstrap'], function(Application, routes) {
-              new Application({routes: routes, controllerSuffix: '-controller',root:'/arisProto/',pushState: false});
-          });
-      </script>
 
 
-  </head>
-  <body>
 
-  </body>
+</head>
+<body>
+
+<!-- APP TEMPLATE -->
+
+<script type="text/x-handlebars">
+    <div class="container-full">
+        <div class="row content">
+        {{outlet}}
+    </div>
+        </div>
+</script>
+
+<!-- !APP TEMPLATE! -->
+
+<!-- SIDEBAR TEMPLATE -->
+<script type="text/x-handlebars" data-template-name="sidebar">
+    <div class="col-lg-12">
+            <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-chevron-down"></span></button>
+            </span>
+            </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</script>
+<!-- !SIDEBAR TEMPLATE! -->
+
+
+<script type="text/x-handlebars" data-template-name="issues_list">
+
+    <div id="header">
+            <h2>Philips</h2>
+            <div id="project_description"></div>
+            </div>
+
+            <div id="toolbar">
+            <div class="btn-group  btn-group-flat btn-group-sm">
+            <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span> Sort</button>
+    <ul class="dropdown-menu">
+            <li><a href="#">Dropdown link</a></li>
+            <li><a href="#">Dropdown link</a></li>
+            </ul>
+            </div>
+
+    <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span> Filter</button>
+    <ul class="dropdown-menu">
+            <li><a href="#">Dropdown link</a></li>
+            <li><a href="#">Dropdown link</a></li>
+            </ul>
+            </div>
+            </div>
+            </div>
+
+
+
+
+    <div id="grid">
+    {{#each issue in model}}
+    <div class="row">
+            <div class="col-lg-1 col col-number">1</div>
+            <div class="col-lg-1 col col-assig">1</div>
+            <div class="col-lg-1 col col-status">1</div>
+            <div class="col-lg-9 col col-title"><div>{{#link-to 'issue' issue}}{{issue.subject}}{{/link-to}}</div><div><button {{action "select" post}}>Open</button></div></div>
+
+    </div>
+        {{/each}}
+
+        </div>
+
+
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="issue_detail">
+    <div id="detail_header">
+
+            <div class="btn-group  btn-group-flat">
+            <button type="button" class="btn btn-default btn-customer"><span class="glyphicon glyphicon-user"></span> Unassigned</button>
+    <button type="button" class="btn btn-default btn-due-date"><span class="glyphicon glyphicon-calendar"></span> Due date</button>
+    <button type="button" class="btn btn-default btn-subtask"><span class="glyphicon glyphicon-tasks"></span></button>
+    <button type="button" class="btn btn-default btn-tags"><span class="glyphicon glyphicon-tags"></span></button>
+    <button type="button" class="btn btn-default btn-attachments"><span class="glyphicon glyphicon-paperclip"></span></button>
+    <button type="button" class="btn btn-default btn-share"><span class="glyphicon glyphicon-heart"></span></button>
+    <button type="button" class="btn btn-default btn-time"><span class="glyphicon glyphicon-time"></span></button>
+    <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+    <ul class="dropdown-menu">
+            <li><a href="#">Dropdown link</a></li>
+            <li><a href="#">Dropdown link</a></li>
+            </ul>
+            </div>
+
+    <button type="button" class="btn btn-default pull-right" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+
+    <div id="detail_projects">
+
+            </div>
+
+            </div>
+    {{subject}}
+</script>
+
+
+
+
+
+<script type="text/x-handlebars" data-template-name="issues">
+
+            <div class="col-lg-2 col-sm-2 content-col">
+                <div id="sidebar">
+                    <div class="row">
+{{outlet sidebar}}
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-5 col-sm-5 content-col"  id="center">
+
+                {{outlet issues_list}}
+
+            </div>
+
+            <div class="col-lg-5 col-sm-5 content-col" id="detail">
+{{outlet issue_detail}}
+            </div>
+
+
+    </script>
+
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+<script src="bower_components/handlebars/handlebars.js"></script>
+<script src="bower_components/ember/index.js"></script>
+<script src="bower_components/ember-states/index.js"></script>
+<script src="bower_components/ember-data/index.js"></script>
+<script src="emberjs/app.js"></script>
+</body>
 </html>
