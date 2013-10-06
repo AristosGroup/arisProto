@@ -25,18 +25,32 @@ body{
 
 #grid .col {
     padding: 5px;
-    font-size: 11px;
+    font-size: 12px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid white;
 
 }
-.col-number{
+#grid .col-number{
     width: 27px;
 
 }
-.col-title {
+#grid .col-title {
     white-space: nowrap;
     overflow: hidden;
+    padding: 4px;
 
 
+}
+
+.col-title input {
+    width: 100%;
+    border: none;
+    margin: 0;
+}
+
+.col-title input:focus {
+    border: none;
+    outline: 0 none;
 }
 
 .btn-default{

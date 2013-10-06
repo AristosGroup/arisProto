@@ -10,6 +10,12 @@ App.Router.reopen({
     rootURL: '/arisProto/'
 });
 
+Ember.TextSupport.KEY_EVENTS={
+    40: 'arrowDown',
+    13: 'insertNewline',
+    27: 'cancel'
+};
+
 
 /**
  *
@@ -74,42 +80,19 @@ App.Router.map(function() {
  */
 
 
-
 App.IssuesIndexRoute = Ember.Route.extend({
+    redirect: function() {
+        this.transitionTo('issues');
+    }
+});
+
+App.IssuesRoute = Ember.Route.extend({
     model: function(params) {
-        return this.get('store').find('issue');
+        return this.get('store').findQuery('issue',{limit:100});
     },
 
-    renderTemplate: function() {
-        this.render(
-            'sidebar', // название шаблона
-            {
-            outlet: 'sidebar',
-            into: 'issues' //шаблон где находится outlet
-        });
-        this.render(
-            'issues_list',
-            {
-            outlet: 'issues_list',
-            into: 'issues',
-            controller:'issuesIndex'
-
-            });
-
-
-        this.render(
-            'issue_detail',
-            {
-                outlet: 'issue_detail',
-                into: 'issues'
-
-            });
-    },
-
-    actions: {
-        select: function() {
-            alert(1);
-        }
+    setupController: function (controller, model) {
+        this.controllerFor('issues').set('filteredIssues', model);
     }
 });
 
@@ -125,14 +108,12 @@ App.IssueRoute = Ember.Route.extend({
 
     serialize: function(issue) {
         return { issue_id: issue.get('id') };
-    },
-
-    renderTemplate: function() {
-        this.render('issue_detail',
-            {
-                outlet: 'issue_detail',
-                into: 'issues'
-            });
+    }
+    ,
+    actions: {
+        close: function() {
+            this.transitionTo('issues');
+        }
     }
 });
 
@@ -146,15 +127,51 @@ App.IssueRoute = Ember.Route.extend({
 
 
 
-App.IssuesIndexController = Ember.ArrayController.extend({
+App.IssuesController = Ember.ArrayController.extend({
+
+
+});
+
+App.IssueRowController = Ember.ObjectController.extend({
+    actions: {
+        active:function(issue) {
+
+            this.transitionToRoute('issue',issue);
+        }
+    }
 
 });
 
 App.IssueController = Ember.ObjectController.extend({
     needs: "issues",
-    issues: Ember.computed.alias("controllers.issuesIndex")
+    issues: Ember.computed.alias("controllers.issues")
 });
 
+
+
+App.IssueRowView = Ember.View.extend( {
+    classNames: ['row'],
+    classNameBindings: ['isEnabled:enabled:disabled'],
+    isEnabled: false,
+    content: null,
+    click:function(){
+
+        this.set('isEnabled',true);
+        this.get('controller').send('active',this.content);
+    },
+    // Just to show you can get the current index here too...
+    adjustedIndex: function() {
+        return this.get('_parentView.contentIndex') + 1;
+    }.property()
+});
+
+App.IssueRowSubjectFieldView = Em.TextField.extend({
+
+    arrowDown:function(evt)
+    {
+        alert(1);
+    }
+});
 
 /**
  * ****************************
@@ -162,7 +179,16 @@ App.IssueController = Ember.ObjectController.extend({
  */
 
 App.Issue = DS.Model.extend({
-    subject: DS.attr('string')
+    subject: DS.attr('string'),
+    project: DS.hasMany('project'),
+    description: DS.attr('string'),
+    created_on: DS.attr('date')
+
+});
+
+App.Project = DS.Model.extend({
+    name: DS.attr('string'),
+    issues: DS.hasMany('issue')
 
 });
 

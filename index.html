@@ -43,7 +43,58 @@
 <!-- !SIDEBAR TEMPLATE! -->
 
 
-<script type="text/x-handlebars" data-template-name="issues_list">
+
+
+
+<script type="text/x-handlebars" data-template-name="issue">
+    <div id="detail_header">
+
+            <div class="btn-group  btn-group-flat">
+            <button type="button" class="btn btn-default btn-customer"><span class="glyphicon glyphicon-user"></span> Unassigned</button>
+    <button type="button" class="btn btn-default btn-due-date"><span class="glyphicon glyphicon-calendar"></span> Due date</button>
+    <button type="button" class="btn btn-default btn-subtask"><span class="glyphicon glyphicon-tasks"></span></button>
+    <button type="button" class="btn btn-default btn-tags"><span class="glyphicon glyphicon-tags"></span></button>
+    <button type="button" class="btn btn-default btn-attachments"><span class="glyphicon glyphicon-paperclip"></span></button>
+    <button type="button" class="btn btn-default btn-share"><span class="glyphicon glyphicon-heart"></span></button>
+    <button type="button" class="btn btn-default btn-time"><span class="glyphicon glyphicon-time"></span></button>
+    <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+    <ul class="dropdown-menu">
+            <li><a href="#">Dropdown link</a></li>
+            <li><a href="#">Dropdown link</a></li>
+            </ul>
+            </div>
+
+    <button type="button" class="btn btn-default pull-right" aria-hidden="true" {{action close bubbles=false}}><span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+
+    <div id="detail_projects">
+
+            </div>
+
+            </div>
+    {{subject}}
+    <div>{{textarea value=description placeholder="description" cols="80" rows="6"}}</div>
+</script>
+
+
+
+
+
+<script type="text/x-handlebars" data-template-name="issues">
+
+            <div class="col-lg-2 col-sm-2 content-col">
+                <div id="sidebar">
+                    <div class="row">
+{{outlet sidebar}}
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-5 col-sm-5 content-col"  id="center">
+
 
     <div id="header">
             <h2>Philips</h2>
@@ -74,76 +125,32 @@
 
 
     <div id="grid">
-    {{#each issue in model}}
-    <div class="row">
-            <div class="col-lg-1 col col-number">1</div>
-            <div class="col-lg-1 col col-assig">1</div>
-            <div class="col-lg-1 col col-status">1</div>
-            <div class="col-lg-9 col col-title"><div>{{#link-to 'issue' issue}}{{issue.subject}}{{/link-to}}</div><div><button {{action "select" post}}>Open</button></div></div>
+    {{#each filteredIssues itemController="issueRow"}}
 
-    </div>
+
+            {{#view App.IssueRowView contentBinding="this"}}
+
+            <div class="col-lg-1 col col-number">{{view.adjustedIndex}}</div>
+            <div class="col-lg-1 col col-assig">1</div>
+            <div class="col-lg-1 col col-status">
+            dd
+            </div>
+            <div class="col-lg-9 col col-title"><div>{{view App.IssueRowSubjectFieldView contentBinding="this" value=this.subject type="text"}} </div></div>
+
+
+
+    {{/view}}
+
         {{/each}}
 
+
+
         </div>
-
-
-</script>
-
-
-<script type="text/x-handlebars" data-template-name="issue_detail">
-    <div id="detail_header">
-
-            <div class="btn-group  btn-group-flat">
-            <button type="button" class="btn btn-default btn-customer"><span class="glyphicon glyphicon-user"></span> Unassigned</button>
-    <button type="button" class="btn btn-default btn-due-date"><span class="glyphicon glyphicon-calendar"></span> Due date</button>
-    <button type="button" class="btn btn-default btn-subtask"><span class="glyphicon glyphicon-tasks"></span></button>
-    <button type="button" class="btn btn-default btn-tags"><span class="glyphicon glyphicon-tags"></span></button>
-    <button type="button" class="btn btn-default btn-attachments"><span class="glyphicon glyphicon-paperclip"></span></button>
-    <button type="button" class="btn btn-default btn-share"><span class="glyphicon glyphicon-heart"></span></button>
-    <button type="button" class="btn btn-default btn-time"><span class="glyphicon glyphicon-time"></span></button>
-    <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
-    <ul class="dropdown-menu">
-            <li><a href="#">Dropdown link</a></li>
-            <li><a href="#">Dropdown link</a></li>
-            </ul>
-            </div>
-
-    <button type="button" class="btn btn-default pull-right" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
-            </div>
-
-    <div id="detail_projects">
-
-            </div>
-
-            </div>
-    {{subject}}
-</script>
-
-
-
-
-
-<script type="text/x-handlebars" data-template-name="issues">
-
-            <div class="col-lg-2 col-sm-2 content-col">
-                <div id="sidebar">
-                    <div class="row">
-{{outlet sidebar}}
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="col-lg-5 col-sm-5 content-col"  id="center">
-
-                {{outlet issues_list}}
 
             </div>
 
             <div class="col-lg-5 col-sm-5 content-col" id="detail">
-{{outlet issue_detail}}
+{{outlet}}
             </div>
 
 
