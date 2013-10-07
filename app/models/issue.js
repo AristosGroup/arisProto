@@ -6,19 +6,6 @@ var Issue = DS.Model.extend({
 
 });
 
-Issue.FIXTURES = [
-    {
-        id: 1,
-        subject: 'Learn Ember.js'
-    },
-    {
-        id: 2,
-        subject: '...'
-    },
-    {
-        id: 3,
-        subject: 'Profit!'
-    }
-];
+
 
 export default Issue;

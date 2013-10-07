@@ -44,14 +44,14 @@
         {{#each filteredIssues itemController="issueRow"}}
 
 
-            {{#view App.IssueRowView contentBinding="this"}}
+            {{#view "issue-row" contentBinding="this"}}
 
                 <div class="col-lg-1 col col-number">{{view.adjustedIndex}}</div>
                 <div class="col-lg-1 col col-assig">1</div>
                 <div class="col-lg-1 col col-status">
                     dd
                 </div>
-                <div class="col-lg-9 col col-title"><div>{{view App.IssueRowSubjectFieldView contentBinding="this" value=this.subject type="text"}} </div></div>
+                <div class="col-lg-9 col col-title"><div>{{input type="text" value=subject}} </div></div>
 
 
 

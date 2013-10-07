@@ -1,6 +1,6 @@
 var IssuesRoute = Ember.Route.extend({
     model: function(params) {
-        return this.get('store').findQuery('issue',{limit:100});
+        return this.get('store').findQuery('issue',{limit:102});
     },
 
     setupController: function (controller, model) {
