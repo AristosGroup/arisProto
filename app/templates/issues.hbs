@@ -1,0 +1,70 @@
+
+<div class="col-lg-2 col-sm-2 content-col">
+    <div id="sidebar">
+        <div class="row">
+            {{outlet sidebar}}
+
+        </div>
+
+    </div>
+
+</div>
+<div class="col-lg-5 col-sm-5 content-col"  id="center">
+
+
+    <div id="header">
+        <h2>Philips</h2>
+        <div id="project_description"></div>
+    </div>
+
+    <div id="toolbar">
+        <div class="btn-group  btn-group-flat btn-group-sm">
+            <div class="btn-group btn-group-sm">
+                <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span> Sort</button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Dropdown link</a></li>
+                    <li><a href="#">Dropdown link</a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group btn-group-sm">
+                <button type="button" class="btn btn-default dropdown-toggle btn-more" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span> Filter</button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Dropdown link</a></li>
+                    <li><a href="#">Dropdown link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="grid">
+        {{#each filteredIssues itemController="issueRow"}}
+
+
+            {{#view App.IssueRowView contentBinding="this"}}
+
+                <div class="col-lg-1 col col-number">{{view.adjustedIndex}}</div>
+                <div class="col-lg-1 col col-assig">1</div>
+                <div class="col-lg-1 col col-status">
+                    dd
+                </div>
+                <div class="col-lg-9 col col-title"><div>{{view App.IssueRowSubjectFieldView contentBinding="this" value=this.subject type="text"}} </div></div>
+
+
+
+            {{/view}}
+
+        {{/each}}
+
+
+
+    </div>
+
+</div>
+
+<div class="col-lg-5 col-sm-5 content-col" id="detail">
+    {{outlet}}
+</div>

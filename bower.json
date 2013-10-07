@@ -1,20 +1,14 @@
 {
-  "name": "arisProto",
-  "version": "0.1.0",
-  "main": "index.js",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "name": "ember-app-kit",
   "dependencies": {
-    "jquery": "~2.0.0",
-    "handlebars": "~1.0.0",
-    "bootstrap": "~3.0.0",
-     "ember" : "http://builds.emberjs.com/canary/ember.js",
-     "ember-data" : "http://builds.emberjs.com/canary/ember-data.js",
-     "ember-states" : "http://builds.emberjs.com/ember-states/latest/ember-states.js"
+    "handlebars": "1.0.0",
+    "jquery": "~1.9.1",
+    "qunit": "~1.12.0",
+    "ember": "1.1.0-beta.2",
+    "ember-data-shim": "1.0.0-beta.3",
+    "ember-localstorage-adapter": "latest"
+  },
+  "resolutions": {
+    "ember": "1.1.0-beta.2"
   }
 }

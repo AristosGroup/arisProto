@@ -1,8 +1,19 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
 .idea
-git add -f bower_components/jquery/jquery.js
-git add -f bower_components/bootstrap/dist/js/bootstrap.js
-git add -f bower_components/ember/index.js
-git add -f bower_components/ember-states/index.js
-git add -f bower_components/ember-data/index.js
-git add -f bower_components/handlebars/handlebars.js
-bower_components/
+/bower_components
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/vendor/*
+!/vendor/almond.js
+!/vendor/resolver.js
+
+# misc
+/.sass-cache
+/connect.lock
+/libpeerconnection.log
+.DS_Store
