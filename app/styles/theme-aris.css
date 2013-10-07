@@ -13,6 +13,8 @@ body{
 }
 .row{
     margin: 0;
+    cursor: pointer;
+
 }
 .content {
     height: 100%;
