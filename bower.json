@@ -6,7 +6,8 @@
     "qunit": "~1.12.0",
     "ember": "1.1.0-beta.2",
     "ember-data-shim": "1.0.0-beta.3",
-    "ember-localstorage-adapter": "latest"
+    "ember-localstorage-adapter": "latest",
+    "ember-states": "http://builds.emberjs.com/ember-states/latest/ember-states.js"
   },
   "resolutions": {
     "ember": "1.1.0-beta.2"

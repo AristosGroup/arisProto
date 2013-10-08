@@ -13,7 +13,7 @@ body{
 }
 .row{
     margin: 0;
-    cursor: pointer;
+
 
 }
 .content {
@@ -23,6 +23,10 @@ body{
 .content-col {
  min-height: 350px;
     margin-top: 5px;
+}
+
+#grid .row {
+    cursor: pointer;
 }
 
 #grid .col {

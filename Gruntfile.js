@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 
   config.env = process.env;
 
-  grunt.registerTask('default', "Build (in debug mode) & test your application.", ['test']);
+ /* grunt.registerTask('default', "Build (in debug mode) & test your application.", ['test']);*/
 
   config.concurrent = {
     dist: [
@@ -132,7 +132,7 @@ module.exports = function(grunt) {
                      'build:after:debug'
                      ]);
 
-  grunt.registerTask('test', "Run your apps's tests once. Uses Google Chrome by default. Logs coverage output to tmp/public/coverage.", [
+/*  grunt.registerTask('test', "Run your apps's tests once. Uses Google Chrome by default. Logs coverage output to tmp/public/coverage.", [
                      'build:debug', 'karma:test' ]);
 
   grunt.registerTask('test:ci', "Run your app's tests in PhantomJS. For use in continuous integration (i.e. Travis CI).", [
@@ -142,7 +142,7 @@ module.exports = function(grunt) {
                      'build:debug', 'karma:browsers' ]);
 
   grunt.registerTask('test:server', "Start a Karma test server. Automatically reruns your tests when files change and logs the results to the terminal.", [
-                     'build:debug', 'karma:server', 'connect:server', 'watch:test']);
+                     'build:debug', 'karma:server', 'connect:server', 'watch:test']);*/
 
   grunt.registerTask('server', "Run your server in development mode, auto-rebuilding when files change.",
                      ['build:debug', 'connect:server', 'watch:main']);
