@@ -1,28 +1,23 @@
-var IssueRowView = Ember.View.extend( {
+var IssueRowView = Ember.View.extend({
     classNames: ['row'],
     classNameBindings: ['isEnabled:enabled:disabled'],
     isEnabled: false,
     content: null,
-    click:function(){
+    click: function () {
 
-        this.set('isEnabled',true);
-        this.get('controller').send('active',this.content);
+        this.activate();
     },
 
 
+    activate: function() {
+        this.set('isEnabled', true);
+        this.get('controller').send('active', this.content);
+    },
 
 
-
-
-    // Just to show you can get the current index here too...
-    adjustedIndex: function() {
+    adjustedIndex: function () {
         return this.get('_parentView.contentIndex') + 1;
     }.property(),
-
-
-    becomeFocused: function() {
-        this.$().find('input').focus();
-    }.on('didInsertElement'),
 
 
     /**
@@ -30,10 +25,22 @@ var IssueRowView = Ember.View.extend( {
      */
 
     titleView: Ember.TextField.extend({
-        insertNewline:function()
-        {
-            this.get('_parentView.controller').send('save',this.content);
-        }
+        insertNewline: function () {
+            this.get('_parentView.controller').send('save', this.content);
+        },
+
+        focusIn:function() {
+            alert(23);
+            this.get('_parentView').activate();
+        },
+
+        arrowDown: function (evt) {
+            alert(12256);
+        },
+
+        becomeFocused: function () {
+            this.$().focus();
+        }.on('didInsertElement')
 
     })
 
