@@ -1,7 +1,17 @@
 <div id="detail_header">
 
     <div class="btn-group  btn-group-flat">
-        <button type="button" class="btn btn-default btn-customer"><span class="glyphicon glyphicon-user"></span> Unassigned</button>
+        <button type="button" class="btn btn-default btn-customer">
+
+        {{#if assigned_to}}
+            <img {{bind-attr src=assigned_to.gravatarUrl}}>
+            {{assigned_to.shortName}}
+        {{else}}
+            <span class="glyphicon glyphicon-user"></span>
+            Unassigned
+            {{/if}}
+
+        </button>
         <button type="button" class="btn btn-default btn-due-date"><span class="glyphicon glyphicon-calendar"></span> Due date</button>
         <button type="button" class="btn btn-default btn-subtask"><span class="glyphicon glyphicon-tasks"></span></button>
         <button type="button" class="btn btn-default btn-tags"><span class="glyphicon glyphicon-tags"></span></button>
@@ -24,5 +34,5 @@
     </div>
 
 </div>
-{{subject}}
+{{subject}}  {{status.name}}
 <div>{{textarea value=description placeholder="description" cols="80" rows="6"}}</div>

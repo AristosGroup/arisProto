@@ -1,4 +1,4 @@
-var IssueRowSubjectFieldView = Em.TextField.extend({
+var IssueRowSubjectFieldView = Ember.TextField.extend({
 
     arrowDown:function(evt)
     {

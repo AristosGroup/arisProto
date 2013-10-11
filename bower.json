@@ -7,7 +7,8 @@
     "ember": "1.1.0-beta.2",
     "ember-data-shim": "1.0.0-beta.3",
     "ember-localstorage-adapter": "latest",
-    "ember-states": "http://builds.emberjs.com/ember-states/latest/ember-states.js"
+    "ember-states": "http://builds.emberjs.com/ember-states/latest/ember-states.js",
+     "blueimp-md5":"git://github.com/blueimp/JavaScript-MD5.git"
   },
   "resolutions": {
     "ember": "1.1.0-beta.2"
