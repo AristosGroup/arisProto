@@ -22,5 +22,7 @@ App.Store = DS.Store.extend({
     revision: 12
 });
 
+//App.ApplicationAdapter = DS.FixtureAdapter;
+
 
 export default App;

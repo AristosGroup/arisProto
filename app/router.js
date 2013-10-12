@@ -8,6 +8,7 @@ Router.reopen({
 Router.map(function(){
     this.resource('issues', { path: '/issues' }, function() {
         this.resource('issue', { path: '/issue/:issue_id' });
+        this.route('new');
     });
 });
 

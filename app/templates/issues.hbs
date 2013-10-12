@@ -34,6 +34,8 @@
                     <li><a href="#">Dropdown link</a></li>
                 </ul>
             </div>
+
+            <button type="button" class="btn btn-default" {{action 'new'}}>New</button>
         </div>
     </div>
 
@@ -41,7 +43,7 @@
 
 
     <div id="grid">
-        {{#each filteredIssues itemController="issueRow"}}
+        {{#each model  itemController="issueRow"}}
 
 
             {{#view "issue-row" contentBinding="this"}}
@@ -51,7 +53,12 @@
                 <div class="col-lg-1 col col-status">
                     dd
                 </div>
-                <div class="col-lg-9 col col-title"><div>{{input type="text" value=subject}} </div></div>
+
+                <div class="col-lg-9 col col-title"><div>
+
+                    {{view view.titleView viewName="childViewInstance" contentBinding="this" valueBinding=subject}}
+
+                    </div></div>
 
 
 

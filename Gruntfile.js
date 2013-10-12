@@ -88,15 +88,15 @@ module.exports = function(grunt) {
                      'coffee',
                      'copy:prepare',
                      'transpile',
-                     'jshint',
+/*                     'jshint',*/
                      'concat_sourcemap'
                      ]));
 
   grunt.registerTask('build:styles', filterAvailable([
-                     'compass:compile',
-                     'sass:compile',
+                /*     'compass:compile',*/
+               /*      'sass:compile',*/
                      'less:compile',
-                     'stylus:compile',
+/*                     'stylus:compile',*/
                      'cssmin'
                      ]));
 
