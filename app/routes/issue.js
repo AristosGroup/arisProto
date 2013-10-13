@@ -3,7 +3,10 @@ var IssueRoute = Ember.Route.extend({
         return this.get('store').find('issue', params.issue_id);
     },
 
-
+    setupController: function (controller, model) {
+        var alltags = this.get('store').findAll('tag');
+        this.controllerFor('issue').set('model', model).set('alltags',alltags);
+    },
 
     serialize: function(issue) {
         return { issue_id: issue.get('id') };

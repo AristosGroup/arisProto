@@ -16,6 +16,27 @@ body{
 
 
 }
+
+.ember-list-view {
+    overflow: auto;
+    position: relative;
+}
+.ember-list-item-view {
+    position: absolute;
+}
+.pull-to-refresh {
+    background-color: yellow;
+    height: 45px;
+
+
+    text-align: center;
+    padding-top:0px;
+}
+
+.ember-list-container {
+    -webkit-transform: translate3d(0px, 0px, 0);
+}
+
 .content {
     height: 100%;
 }
@@ -26,6 +47,8 @@ body{
 }
 
 #grid .row {
+    width:598px;
+
     cursor: pointer;
 }
 

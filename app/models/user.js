@@ -19,7 +19,7 @@ var User = DS.Model.extend({
         var email = this.get('email'),
             size = this.get('avatarSize');
 
-        return 'http://www.gravatar.com/avatar/' + email + '?s=' + size;
+        return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=' + size;
     }.property('email', 'avatarSize')
 });
 

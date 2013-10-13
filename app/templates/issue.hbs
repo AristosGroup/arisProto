@@ -35,4 +35,16 @@
 
 </div>
 {{subject}}  {{status.name}}
-<div>{{textarea value=description placeholder="description" cols="80" rows="6"}}</div>
+<div>{{textarea valueBinding="description" placeholder="description" cols="80" rows="6"}}</div>
+
+<div>
+    <div class="controls">
+        {{view "Ember.Select"
+        multiple=true
+        selectionBinding="tags"
+        contentBinding="alltags"
+        optionValuePath="content.id"
+        optionLabelPath="content.title"
+        }}
+    </div>
+</div>

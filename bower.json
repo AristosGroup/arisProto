@@ -5,10 +5,12 @@
     "jquery": "~1.9.1",
     "qunit": "~1.12.0",
     "ember": "1.1.0-beta.2",
-    "ember-data-shim": "1.0.0-beta.3",
+    "ember-data-shim": "http://builds.emberjs.com/canary/ember-data.js",
     "ember-localstorage-adapter": "latest",
     "ember-states": "http://builds.emberjs.com/ember-states/latest/ember-states.js",
-     "blueimp-md5":"git://github.com/blueimp/JavaScript-MD5.git"
+     "blueimp-md5":"git://github.com/blueimp/JavaScript-MD5.git",
+     "select2":"latest",
+     "epf":"latest"
   },
   "resolutions": {
     "ember": "1.1.0-beta.2"

@@ -1,4 +1,7 @@
-var IssueRowView = Ember.View.extend({
+require('aris/mixins/list-view/main');
+
+
+var IssueRowView = Ember.ListItemView.extend(Ember.ListItemViewMixin,{
     classNames: ['row'],
     classNameBindings: ['isEnabled:enabled:disabled'],
     isEnabled: false,
@@ -30,8 +33,8 @@ var IssueRowView = Ember.View.extend({
         },
 
         focusIn:function() {
-            alert(23);
-            this.get('_parentView').activate();
+           // alert(23);
+          //  this.get('_parentView').activate();
         },
 
         arrowDown: function (evt) {

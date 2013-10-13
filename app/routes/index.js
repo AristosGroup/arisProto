@@ -1,7 +1,7 @@
 var IndexRoute = Ember.Route.extend({
-  model: function() {
-    return ['red', 'yellow', 'blue','green'];
-  }
+    redirect:function() {
+        this.transitionTo('issues');
+    }
 });
 
 export default IndexRoute;

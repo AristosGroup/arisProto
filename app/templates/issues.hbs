@@ -43,9 +43,9 @@
 
 
     <div id="grid">
-        {{#each model  itemController="issueRow"}}
 
 
+        {{#collection "IssuesGridView" contentBinding="controller" height=600 width=598 rowHeight=29 elementWidth=590}}
             {{#view "issue-row" contentBinding="this"}}
 
                 <div class="col-lg-1 col col-number">{{view.adjustedIndex}}</div>
@@ -54,17 +54,17 @@
                     dd
                 </div>
 
-                <div class="col-lg-9 col col-title"><div>
+                <div class="col-lg-9 col col-title"><div class="pull-left">
 
-                    {{view view.titleView viewName="childViewInstance" contentBinding="this" valueBinding=subject}}
-
-                    </div></div>
+                    {{view view.titleView viewName="childViewInstance" contentBinding="this"  valueBinding=subject}}</div>
+<div class="pull-right">{{#each tag in tags}}{{tag.title}},{{/each}}
+                    </div>
+                </div>
 
 
 
             {{/view}}
-
-        {{/each}}
+        {{/collection}}
 
 
 

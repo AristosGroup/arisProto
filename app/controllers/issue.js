@@ -1,6 +1,11 @@
+
+
 var IssueController = Ember.ObjectController.extend({
-/*    needs: "issues",
-    issues: Ember.computed.alias("controllers.issues")*/
+    /*needs: "alltags",
+    alltags: Ember.computed.alias("controllers.alltags")*/
+
+
+
 });
 
 export default IssueController;
