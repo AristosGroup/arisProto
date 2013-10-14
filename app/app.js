@@ -1,30 +1,21 @@
-import Resolver from 'resolver';
-import registerComponents from 'aris/utils/register_components';
-
-require('aris/mixins/emberella/lib/main');
-
-var App = Ember.Application.extend({
-  LOG_ACTIVE_GENERATION: true,
-  LOG_MODULE_RESOLVER: true,
-  LOG_TRANSITIONS: true,
-  LOG_TRANSITIONS_INTERNAL: true,
-  LOG_VIEW_LOOKUPS: true,
-  modulePrefix: 'aris', // TODO: loaded via config
-  Resolver: Resolver
+// Application bootstrapper
+module.exports = App = Ember.Application.create({
+  LOG_TRANSITIONS: true, // basic logging of successful transitions
+  LOG_TRANSITIONS_INTERNAL: true, // detailed logging of all routing steps
+  LOG_STACKTRACE_ON_DEPRECATION : true,
+  LOG_BINDINGS                  : true,
+  LOG_VIEW_LOOKUPS              : true,
+  LOG_ACTIVE_GENERATION         : true 
 });
 
-App.initializer({
-  name: 'Register Components',
-  initialize: function(container, application) {
-    registerComponents(container);
-  }
+Ember.RSVP.configure('onerror', function(e) {
+  console.log(e.message); 
+  console.log(e.stack);
 });
 
-App.Store = DS.Store.extend({
-    revision: 12
-});
-
-//App.ApplicationAdapter = DS.FixtureAdapter;
-
-
-export default App;
+function ev(emberId){
+  return Ember.View.views['ember' + emberId];
+}
+function ec(emberId){
+  return ev(emberId).get('controller');
+}
