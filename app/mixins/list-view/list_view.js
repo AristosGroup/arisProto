@@ -1,5 +1,5 @@
-require('aris/mixins/list-view/list_view_mixin');
-require('aris/mixins/list-view/list_view_helper');
+require('mixins/list-view/list_view_mixin');
+require('mixins/list-view/list_view_helper');
 
 var get = Ember.get, set = Ember.set;
 

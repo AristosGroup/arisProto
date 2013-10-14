@@ -1,10 +1,9 @@
-require('aris/mixins/list-view/main');
+require('mixins/list-view/main');
 
 
-import IssueRowView from 'aris/views/issue-row';
-import App from 'aris/app';
+App = require('app');
 
- App.IssuesGridView = Ember.VirtualListView.extend({
+module.exports =  App.IssuesGridView = Ember.VirtualListView.extend({
     //height: 500,
    // rowHeight: 50
    // itemViewClass: IssueRowView.extend({templateName: "issue-row"})
@@ -36,4 +35,3 @@ import App from 'aris/app';
      }*/
 });
 
-export default App.IssuesGridView;

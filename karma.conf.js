@@ -1,70 +1,57 @@
 // Karma configuration
-// Generated on Fri Jul 05 2013 01:57:57 GMT-0400 (EDT)
+// Generated on Fri Aug 23 2013 00:11:25 GMT+0100 (BST)
 
-module.exports = function(config) {
-  config.set({
+module.exports = function(karma) {
+  karma.configure({
 
     // base path, that will be used to resolve files and exclude
-    basePath: 'tmp/public',
+    basePath: '',
+
+
+    // frameworks to use
+    //frameworks: ['qunit', 'requirejs'],
+    frameworks: ['qunit'],
+
 
     // list of files / patterns to load in the browser
     files: [
-      'vendor/almond.js',
-      'vendor/resolver.js',
-      'vendor/jquery/jquery.js',
-      'vendor/handlebars/handlebars.js',
-      'vendor/ember/ember.js',
-      'vendor/ember-data-shim/ember-data.js',
-      'assets/templates.js',
-      'assets/app.js',
-      'tests/tests.js',
-      'tests/test_helper.js',
-      'tests/test_loader.js'
+    'public/javascripts/vendor.js',
+    'public/javascripts/app.js',
+	'test/helpers.js',
+	'test/**/*_test.js'
     ],
 
-    frameworks: ['qunit'],
-
-    plugins: [
-      'karma-qunit',
-      'karma-coverage',
-      'karma-phantomjs-launcher',
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      //'karma-safari-launcher'  // npm install karma-safari-launcher
-    ],
-
-    preprocessors: {
-      'assets/*.js': 'coverage'
-    },
 
     // list of files to exclude
-    exclude: [],
+    exclude: [
+      
+    ],
+
 
     // test results reporter to use
-    // possible values: 'dots', 'progress', 'junit'
-    reporters: 'coverage',
+    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+    reporters: ['progress'],
 
-    coverageReporter: {
-      type : ['text'],
-      dir : 'coverage/'
-    },
 
     // web server port
-    port: parseInt(process.env.PORT, 10) + 1 || 9876,
+    port: 9876,
+
 
     // cli runner port
     runnerPort: 9100,
 
+
     // enable / disable colors in the output (reporters and logs)
     colors: true,
 
+
     // level of logging
-    // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    // possible values: karma.LOG_DISABLE || karma.LOG_ERROR || karma.LOG_WARN || karma.LOG_INFO || karma.LOG_DEBUG
+    logLevel: karma.LOG_INFO,
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
-
+	
     // Start these browsers, currently available:
     // - Chrome
     // - ChromeCanary
@@ -73,13 +60,16 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
+
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000,
 
+
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: true
+	
   });
 };

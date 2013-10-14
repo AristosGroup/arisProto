@@ -1,4 +1,6 @@
-var IssueRoute = Ember.Route.extend({
+App = require('app');
+
+module.exports =  App.IssueRoute = Ember.Route.extend({
     model: function(params) {
         return this.get('store').find('issue', params.issue_id);
     },
@@ -18,4 +20,4 @@ var IssueRoute = Ember.Route.extend({
     }
 });
 
-export default IssueRoute;
+

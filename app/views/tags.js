@@ -22,5 +22,3 @@ var TagsView = Ember.TextField.extend({
 
 
 });
-
-export default TagsView;

@@ -1,7 +1,9 @@
-var IndexRoute = Ember.Route.extend({
+App = require('app');
+
+module.exports =  App.IndexRoute = Ember.Route.extend({
     redirect:function() {
         this.transitionTo('issues');
     }
 });
 
-export default IndexRoute;
+

@@ -1,7 +1,7 @@
 /*global Scroller*/
-require('aris/mixins/list-view/list_view_mixin');
-require('aris/mixins/list-view/list_view_helper');
-require('aris/mixins/list-view/virtual_list_scroller_events');
+require('mixins/list-view/list_view_mixin');
+require('mixins/list-view/list_view_helper');
+require('mixins/list-view/virtual_list_scroller_events');
 
 var max = Math.max, get = Ember.get, set = Ember.set;
 

@@ -1,7 +1,8 @@
-var  AlltagsController = Ember.ArrayController.extend({
+App = require('app');
+
+module.exports =  App.AlltagsController = Ember.ArrayController.extend({
 
 
 
 });
 
-export default AlltagsController;

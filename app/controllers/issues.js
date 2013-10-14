@@ -1,13 +1,9 @@
-import IssuesGridView from 'aris/views/issues-grid';
-require( 'aris/mixins/emberella/lib/main');
-require( 'aris/mixins/groupable');
 
-
-var Emberella = window.Emberella;
-var  IssuesController = Ember.ArrayController.extend({
+App = require('app');
+module.exports =  App.IssuesController = Ember.ArrayController.extend({
     needs: "issue",
     issue: Ember.computed.alias("controllers.issue"),
-    IssuesGridView:IssuesGridView,
+    IssuesGridView:App.IssuesGridView,
 
     groupBy:'status',
   //  groupType:Ember.ArrayProxy,
@@ -62,5 +58,3 @@ var  IssuesController = Ember.ArrayController.extend({
         }
     }
 });
-
-export default IssuesController;

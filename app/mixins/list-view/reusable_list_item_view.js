@@ -1,4 +1,4 @@
-require('aris/mixins/list-view/list_item_view_mixin');
+require('mixins/list-view/list_item_view_mixin');
 
 var get = Ember.get, set = Ember.set;
 

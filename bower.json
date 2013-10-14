@@ -1,18 +1,83 @@
 {
-  "name": "ember-app-kit",
-  "dependencies": {
-    "handlebars": "1.0.0",
-    "jquery": "~1.9.1",
-    "qunit": "~1.12.0",
-    "ember": "1.1.0-beta.2",
-    "ember-data-shim": "http://builds.emberjs.com/canary/ember-data.js",
-    "ember-localstorage-adapter": "latest",
-    "ember-states": "http://builds.emberjs.com/ember-states/latest/ember-states.js",
-     "blueimp-md5":"git://github.com/blueimp/JavaScript-MD5.git",
-     "select2":"latest",
-     "epf":"latest"
-  },
-  "resolutions": {
-    "ember": "1.1.0-beta.2"
-  }
+	"name": "Aris",
+	"repo": "pirrat/Aris",
+	"version": "0.0.3",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"components"
+	],
+	"dependencies": {
+		"console-polyfill": "~0.1.0",
+		"jquery": "2.0.*",
+		"ember": "~1.0.0",
+		"bootstrap": "~3.0.*",
+		"handlebars": "1.0.0",
+		"ember-data-shim": "1.0.*",
+		"select2": "~3.4.*",
+		"moment": "~2.*",
+		"bootstrap-datepicker": "~1.*",
+        "zynga-scroller":"git@github.com:zynga/scroller.git",
+        "blueimp-md5":"git@github.com:blueimp/JavaScript-MD5.git"
+
+	},
+	"overrides": {
+
+
+
+		"jquery": {
+			"main": "jquery.js"
+		},
+		"bootstrap": {
+			"main": [
+				"dist/js/bootstrap.js",
+				"dist/css/bootstrap.css",
+				"dist/css/bootstrap-theme.css",
+				"dist/fonts/glyphicons-halflings-regular.woff",
+				"dist/fonts/glyphicons-halflings-regular.ttf",
+				"dist/fonts/glyphicons-halflings-regular.svg"	
+			],
+			"dependencies": {
+				"jquery": "~1.9.1"
+			}
+		},
+
+		"bootstrap-datepicker": {
+			"main": [
+				"js/bootstrap-datepicker.js",
+				"css/datepicker.css"
+			],
+			"dependencies": {
+				"jquery": ">=1.7.1",
+				"bootstrap": "~3.0.*"
+			}
+		},
+		"select2": {
+			"main": [
+				"select2.js",
+				"select2.css",
+				"select2.png",
+				"select2x2.png",
+				"select2-spinner.gif"
+			],
+			"dependencies": {
+				"jquery": ">= 1.7.1"
+			}
+		},
+		"moment": {
+			"main": "moment.js"
+		},
+		"resolutions": {
+			"bootstrap": "~3.0.0"
+		},
+        "blueimp-md5": {
+            "main":"js/md5.js"
+        },
+        "zynga-scroller": {
+            "main": [
+            "src/Animate.js",
+            "src/Scroller.js"
+            ]
+        }
+	}
 }

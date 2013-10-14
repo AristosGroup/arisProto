@@ -1,7 +1,7 @@
-require('aris/mixins/list-view/main');
+require('mixins/list-view/main');
+App = require('app');
 
-
-var IssueRowView = Ember.ListItemView.extend(Ember.ListItemViewMixin,{
+module.exports =  App.IssueRowView = Ember.ListItemView.extend(Ember.ListItemViewMixin,{
     classNames: ['row'],
     classNameBindings: ['isEnabled:enabled:disabled'],
     isEnabled: false,
@@ -49,5 +49,3 @@ var IssueRowView = Ember.ListItemView.extend(Ember.ListItemViewMixin,{
 
 
 });
-
-export default IssueRowView;

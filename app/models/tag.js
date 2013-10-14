@@ -1,4 +1,6 @@
-var Tag = DS.Model.extend({
+App = require('app');
+
+module.exports =  App.Tag = DS.Model.extend({
     title: DS.attr('string'),
     text:function(){
         return this.get('title');
@@ -9,12 +11,9 @@ var Tag = DS.Model.extend({
 });
 
 
-Tag.FIXTURES = [
+App.Tag.FIXTURES = [
     { id: 1, title: 'Design'},
     { id: 2,title: 'Develop'  },
     { id: 3,title: 'Test'  }
 ];
 
-
-
-export default Tag;

@@ -1,4 +1,6 @@
-var IssuesRoute = Ember.Route.extend({
+App = require('app');
+
+module.exports =  App.IssuesRoute = Ember.Route.extend({
     model: function(params) {
         // return this.get('store').findQuery('issue',{limit:102});
         return this.get('store').findAll('issue');
@@ -9,6 +11,3 @@ var IssuesRoute = Ember.Route.extend({
     }
 });
 
-
-
-export default IssuesRoute;

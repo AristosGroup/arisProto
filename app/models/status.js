@@ -1,4 +1,6 @@
-var Status = DS.Model.extend({
+App = require('app');
+
+module.exports =  App.Status = DS.Model.extend({
     name: DS.attr('string')
 
 
@@ -6,11 +8,8 @@ var Status = DS.Model.extend({
 });
 
 
-Status.FIXTURES = [
+App.Status.FIXTURES = [
     { id: 1, name: 'Open'},
     { id: 2, name: 'Complete'  }
 ];
 
-
-
-export default Status;

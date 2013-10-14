@@ -1,6 +1,6 @@
+App = require('app');
 
-
-var User = DS.Model.extend({
+module.exports =  App.User = DS.Model.extend({
     firstname: DS.attr('string'),
     lastname: DS.attr('string'),
     email: DS.attr('string'),
@@ -26,11 +26,7 @@ var User = DS.Model.extend({
 
 
 
-User.FIXTURES = [
+App.User.FIXTURES = [
     { id: 1, firstname: 'Aleksey',lastname: 'Kuznetsov',email:'mrakobesov@gmail.com'},
     { id: 2,firstname: 'Aleksandr', lastname: 'Stanovoy',email:'soccer007@mail.ru'  }
 ];
-
-
-
-export default User;
