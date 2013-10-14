@@ -1,5 +1,6 @@
 import IssuesGridView from 'aris/views/issues-grid';
 require( 'aris/mixins/emberella/lib/main');
+require( 'aris/mixins/groupable');
 
 
 var Emberella = window.Emberella;

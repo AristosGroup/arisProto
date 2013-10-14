@@ -1,5 +1,5 @@
 require('aris/mixins/list-view/main');
-require('aris/mixins/list-view/main');
+
 
 import IssueRowView from 'aris/views/issue-row';
 import App from 'aris/app';
