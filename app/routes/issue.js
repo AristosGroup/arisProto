@@ -7,7 +7,7 @@ module.exports =  App.IssueRoute = Ember.Route.extend({
 
     setupController: function (controller, model) {
         var alltags = this.get('store').findAll('tag');
-        this.controllerFor('issue').set('model', model).set('alltags',alltags);
+        controller.set('content', model).set('alltags',alltags);
     },
 
     serialize: function(issue) {

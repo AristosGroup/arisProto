@@ -35,16 +35,18 @@
 
 </div>
 {{subject}}  {{status.name}}
-<div>{{textarea valueBinding="description" placeholder="description" cols="80" rows="6"}}</div>
+<div class="row"> <div class="col-lg-12 col-sm-12">{{textarea valueBinding="description" placeholder="description" cols="80" rows="6"}}</div></div>
 
-<div>
-    <div class="controls">
-        {{view "Ember.Select"
+<div class="row">
+    <div class="col-lg-12 col-sm-12">
+    {{#if content.isLoaded}}
+        {{view App.TagsView
         multiple=true
-        selectionBinding="tags"
+        selectionBinding="controller.tags"
         contentBinding="alltags"
         optionValuePath="content.id"
         optionLabelPath="content.title"
         }}
+    {{/if}}
     </div>
 </div>

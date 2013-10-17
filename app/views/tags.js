@@ -1,24 +1,24 @@
-var TagsView = Ember.TextField.extend({
-    classNames: ['input-xlarge', 'tags'],
+module.exports =  App.TagsView = Ember.Select.extend({
 
-    prompt: 'Please select...',
 
+
+
+/*
     didInsertElement: function() {
         Ember.run.scheduleOnce('afterRender', this, 'processChildElements');
     },
 
     processChildElements: function() {
         this.$().select2({
-            multiple:true,
-            tags:[    { id: 1, text: 'Design'},
-                { id: 2,text: 'Develop'  },
-                { id: 3,text: 'Test'  }]
+            width:'100%',
+          //  data:this.get('content')
         });
     },
 
     willDestroyElement: function () {
         this.$().select2("destroy");
     }
+*/
 
 
 });

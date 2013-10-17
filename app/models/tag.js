@@ -14,6 +14,7 @@ module.exports =  App.Tag = DS.Model.extend({
 App.Tag.FIXTURES = [
     { id: 1, title: 'Design'},
     { id: 2,title: 'Develop'  },
-    { id: 3,title: 'Test'  }
+    { id: 3,title: 'Test'  },
+    { id: 4,title: 'Test4'  }
 ];
 
