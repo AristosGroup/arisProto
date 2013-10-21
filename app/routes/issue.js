@@ -6,7 +6,7 @@ module.exports =  App.IssueRoute = Ember.Route.extend({
     },
 
     setupController: function (controller, model) {
-        var alltags = this.get('store').findAll('tag');
+        var alltags = this.get('store').find('tag');
         controller.set('content', model).set('alltags',alltags);
     },
 

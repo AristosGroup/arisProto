@@ -6,21 +6,21 @@ module.exports =  App.Issue = DS.Model.extend({
     projects: DS.hasMany('project', { async: true }),
     subtasks: DS.hasMany('issue', { async: true }),
   //  boundTagsBinding: Ember.Binding.multiple('tags'),
-    tags: DS.hasMany('tag', { async: true }),
+    tags: DS.hasMany('tag', { async: true,embedded:'always' }),
    // categories: DS.hasMany('category', { async: true }),
     status: DS.belongsTo('status', { async: true }),
     description: DS.attr('string'),
     created_on: DS.attr('date'),
     assigned_to: DS.belongsTo('user', { async: true }),
     followers: DS.hasMany('user', { async: true })
-   /* ,
+    ,
 
     tagsstring:function()
     {
        // this.get('store').find('tag');
         var str='';
-        this.get('tag').forEach(function(item, index, enumerable){
-            str +=item.get('title')+',';
+        this.get('tags').forEach(function(item, index, enumerable){
+            str +=item.get('id')+',';
 
         });
 
@@ -29,7 +29,7 @@ module.exports =  App.Issue = DS.Model.extend({
         console.log(str);
         return str;
 
-    }.property('@each.tag')*/
+    }.property('@each.tags')
 
 });
 

@@ -9,10 +9,48 @@ App.Store = DS.Store.extend({
 });
 
 
-App.ApplicationAdapter = DS.FixtureAdapter.extend({
+/**
+ *
+ * rewrite Rest Adapter
+ */
+/*App.serializer = DS.RESTSerializer.extend({
 
-    queryFixtures: function(fixtures, query, type) {
-        return fixtures;
+    extractMeta: function(store, type, payload) {
+
+        var hash = {};
+
+        if (payload && payload.total_count) {
+            hash['total_count'] = payload.total_count;
+            hash['offset'] = payload.offset;
+            hash['limit'] = payload.limit;
+            store.metaForType(type, hash);
+            delete payload.total_count;
+            delete payload.offset;
+            delete payload.limit;
+        }
+    }
+});*/
+
+App.ApplicationAdapter = DS.RESTAdapter.extend({
+
+    host:'http://aris.proaristos.ru/api',
+   /* serializer: App.serializer.create(),*/
+    suffix:false,
+    bulkCommit: false,
+
+    headers: {
+        "X-Redmine-API-Key": "1ba9eddec017876adbb2156aafccdc027791bda0"
+        //  "X-Redmine-Nometa":1
+
+    },
+
+    buildURL : function(type, id) {
+        var url = this._super(type, id);
+        if(this.suffix)
+            url = url+this.suffix;
+
+        return url;
+
     }
 });
 
@@ -44,11 +82,11 @@ require ('routes/issues');
 
 
 // ===== Models =====
-require ('models/issue');
 require ('models/project');
 require ('models/status');
 require ('models/tag');
 require ('models/user');
+require ('models/issue');
 
 
 // ===== Views =====
