@@ -1,15 +1,15 @@
-module.exports =  App.TagsView = Ember.TextField.extend({
+module.exports =  App.TagsView = Ember.Select.extend({
 
-
+/*
     didInsertElement: function() {
         Ember.run.scheduleOnce('afterRender', this, 'processChildElements');
     },
 
     processChildElements: function() {
         var preload_data = this.get('_parentView.controller').get('alltags');
-    /*    this.get('_parentView.controller').get('alltags').then(function(tags) {
+    *//*    this.get('_parentView.controller').get('alltags').then(function(tags) {
             console.log(tags);
-        });*/
+        });*//*
         console.log(preload_data);
         this.$().select2({
             width:'100%',
@@ -35,7 +35,7 @@ module.exports =  App.TagsView = Ember.TextField.extend({
 
     willDestroyElement: function () {
         this.$().select2("destroy");
-    }
+    }*/
 
 
 

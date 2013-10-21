@@ -42,7 +42,8 @@
     {{#if content.isLoaded}}
         {{view App.TagsView
         multiple=true
-        valueBinding=tagsstring
+        contentBinding=alltags
+        selectionBinding=tags
         optionValuePath="content.id"
         optionLabelPath="content.title"
         }}
