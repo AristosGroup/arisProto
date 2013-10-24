@@ -74,6 +74,7 @@ App.Router.map(function() {
 
 // ===== Routes =====
 require ('routes/application');
+require ('routes/loading');
 require ('routes/index');
 
 require ('routes/issue');
@@ -118,3 +119,6 @@ require ('templates/issue');
 require ('templates/issues');
 require ('templates/sidebar');
 require ('templates/pull-to-refresh');
+require ('templates/loading');
+require ('templates/issue/loading');
+require ('templates/error');
