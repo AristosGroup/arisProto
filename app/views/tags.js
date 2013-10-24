@@ -13,9 +13,16 @@ module.exports =  App.TagsView = Ember.Select.extend({
         });
     },
 
-    willDestroyElement: function () {
+    willClearRender: function () {
         this.$().select2("destroy");
-    }
+    },
+
+    /**
+     * select2 selection react to selectionBinding changing
+     */
+    _underlyingSelectionDidChange: Ember.observer((function() {
+        this.$().select2('val', this.$().val());
+    }), "selection.@each")
 
 
 

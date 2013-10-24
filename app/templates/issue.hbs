@@ -4,7 +4,7 @@
         <button type="button" class="btn btn-default btn-customer">
 
         {{#if assigned_to}}
-            <img {{bind-attr src=assigned_to.gravatarUrl}}>
+            {{avatar this.model}}
             {{assigned_to.shortName}}
         {{else}}
             <span class="glyphicon glyphicon-user"></span>
@@ -39,14 +39,30 @@
 
 <div class="row">
     <div class="col-lg-12 col-sm-12">
-    {{#if content.isLoaded}}
+
         {{view App.TagsView
         multiple=true
-        contentBinding=alltags
-        selectionBinding=tags
+        contentBinding='alltags'
+        selectionBinding='tags'
         optionValuePath="content.id"
         optionLabelPath="content.title"
         }}
-    {{/if}}
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-12 col-sm-12">
+
+            {{view App.FollowersView
+            multiple=true
+            contentBinding='users'
+            selectionBinding='followers'
+            optionValuePath="content.id"
+            optionLabelPath="content.shortName"
+            }}
+
     </div>
 </div>

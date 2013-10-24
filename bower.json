@@ -10,22 +10,28 @@
 	"dependencies": {
 		"console-polyfill": "~0.1.0",
 		"jquery": "2.0.*",
-		"ember": "1.1.0-beta.2",
+		"ember": "1.2.0-beta.1",
 		"bootstrap": "~3.0.*",
 		"handlebars": "1.0.0",
-		"ember-data-shim": "1.*.*",
+		"ember-data-shim": "1.0.0-beta.3",
 		"select2": "~3.4.*",
 		"moment": "~2.*",
-		"bootstrap-datepicker": "~1.*",
         "zynga-scroller":"git@github.com:zynga/scroller.git",
         "blueimp-md5":"git@github.com:blueimp/JavaScript-MD5.git"
+
 
 	},
 	"overrides": {
 
+        "handlebars": {
+            "main": [
+                "handlebars.js"
+            ]
+        },
+
         "ember-data":{
             "dependencies": {
-                "ember": "1.1.0-beta.2"
+                "ember": "1.2.0-beta.1"
             }
         },
 
@@ -44,20 +50,10 @@
 				"dist/fonts/glyphicons-halflings-regular.svg"	
 			],
 			"dependencies": {
-				"jquery": "~1.9.1"
+				"jquery": "~2.0.*"
 			}
 		},
 
-		"bootstrap-datepicker": {
-			"main": [
-				"js/bootstrap-datepicker.js",
-				"css/datepicker.css"
-			],
-			"dependencies": {
-				"jquery": ">=1.7.1",
-				"bootstrap": "~3.0.*"
-			}
-		},
 		"select2": {
 			"main": [
 				"select2.js",
@@ -67,7 +63,7 @@
 				"select2-spinner.gif"
 			],
 			"dependencies": {
-				"jquery": ">= 1.7.1"
+				"jquery": "~2.0.*"
 			}
 		},
 		"moment": {

@@ -64,6 +64,7 @@ App.Router.reopen({
 // ===== Router =====
 App.Router.map(function() {
 
+    this.resource('tags', { path: '/tags' });
     this.resource('issues', { path: '/issues' }, function() {
         this.resource('issue', { path: '/issue/:issue_id' });
         this.route('new');
@@ -74,6 +75,7 @@ App.Router.map(function() {
 // ===== Routes =====
 require ('routes/application');
 require ('routes/index');
+
 require ('routes/issue');
 require ('routes/issue_index');
 require ('routes/issues');
@@ -93,19 +95,22 @@ require ('models/issue');
 require ('views/issue-row');
 require ('views/issues-grid');
 require ('views/tags');
+require ('views/followers');
 
 
 // ===== Controllers =====
-
+require ('controllers/tags');
 require ('controllers/issue');
 require ('controllers/issues');
-require ('controllers/alltags');
+require ('controllers/users');
 // ===== Template Helpers =====
 
 
 // ===== Mixins =====
 
 require ('mixins/list-view/main');
+
+require ('helpers/avatar');
 
 // ===== Templates =====
 require ('templates/application');

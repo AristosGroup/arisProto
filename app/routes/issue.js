@@ -5,9 +5,22 @@ module.exports =  App.IssueRoute = Ember.Route.extend({
         return this.get('store').find('issue', params.issue_id);
     },
 
+
+
     setupController: function (controller, model) {
-        var alltags = this.get('store').find('tag');
-        controller.set('content', model).set('alltags',alltags);
+
+        var self = this;
+
+
+        this.store.find('tag').then(function(items) {
+            self.controllerFor('tags').set('content', items);
+        });
+
+
+        this.store.find('user').then(function(items) {
+            self.controllerFor('users').set('content', items);
+        });
+        controller.set('content', model);
     },
 
     serialize: function(issue) {
