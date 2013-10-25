@@ -4,7 +4,7 @@ module.exports =  App.Issue = DS.Model.extend({
     projects: DS.hasMany('project', { async: true }),
     subtasks: DS.hasMany('issue', { async: true }),
   //  boundTagsBinding: Ember.Binding.multiple('tags'),
-    tags: DS.hasMany('tag', { async: true,embedded:'always' }),
+    tags: DS.hasMany('tag', { async: true }),
    // categories: DS.hasMany('category', { async: true }),
     status: DS.belongsTo('status', { async: true }),
     description: DS.attr('string'),

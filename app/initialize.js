@@ -122,4 +122,3 @@ require ('templates/pull-to-refresh');
 require ('templates/loading');
 require ('templates/issue/loading');
 require ('templates/error');
-require ('templates/components/avatar');

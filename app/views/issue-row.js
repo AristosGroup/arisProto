@@ -29,7 +29,7 @@ module.exports =  App.IssueRowView = Ember.ListItemView.extend(Ember.ListItemVie
 
     titleView: Ember.TextField.extend({
         insertNewline: function () {
-            this.get('_parentView.controller').send('save', this.content);
+            this.get('_parentView.controller').send('new', this.content);
         },
 
         focusIn:function() {

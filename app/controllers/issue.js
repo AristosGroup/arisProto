@@ -1,10 +1,17 @@
 App = require('app');
 
-module.exports =  App.IssueController = Ember.ObjectController.extend({
+module.exports = App.IssueController = Ember.ObjectController.extend({
 
-    needs: ["tags","users"],
+    needs: ["tags", "users"],
     alltags: Ember.computed.alias("controllers.tags"),
-    users: Ember.computed.alias("controllers.users")
+    users: Ember.computed.alias("controllers.users"),
+
+
+    actions: {
+        update: function (issue) {
+            issue.save();
+        }
+    }
 
 
 });

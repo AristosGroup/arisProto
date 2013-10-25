@@ -5,7 +5,7 @@ module.exports =  App.User = DS.Model.extend({
     lastname: DS.attr('string'),
     email: DS.attr('string'),
 
-    avatarSize:20,
+
 
     fullName: function() {
         return this.get('firstname') + ' ' + this.get('lastname');
@@ -13,22 +13,7 @@ module.exports =  App.User = DS.Model.extend({
 
     shortName:function() {
         return this.get('firstname').substring(0,1)+this.get('lastname').substring(0,1);
-    }.property('firstname', 'lastname'),
-
-    gravatarUrl: function() {
-        var email = this.get('email'),
-            size = this.get('avatarSize');
-
-       /* var jqxhr = $.get( 'http://www.gravatar.com/avatar/' + md5(email) + '?s=' + size+'&d=404', function() {
-            alert( "success" );
-        })
-
-            .fail(function() {
-                alert( "error" );
-            });*/
-
-        return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=' + size+'&d=404';
-    }.property('email', 'avatarSize')
+    }.property('firstname', 'lastname')
 });
 
 
