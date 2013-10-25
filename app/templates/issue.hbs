@@ -4,7 +4,7 @@
         <button type="button" class="btn btn-default btn-customer">
 
         {{#if assigned_to}}
-            {{avatar this.model}}
+            {{user-avatar user=this.model.assigned_to}}
             {{assigned_to.shortName}}
         {{else}}
             <span class="glyphicon glyphicon-user"></span>

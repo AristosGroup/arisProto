@@ -15,6 +15,8 @@ module.exports =  App.FollowersView = Ember.Select.extend({
             });
 
             //todo call from avatar helper
+            //            return   App.UserAvatarComponent.create().set('user',obj).render() + obj.get('shortName');
+
             return '<img src="'+obj.get('gravatarUrl')+'" /> ' + obj.get('fullName');
         };
 

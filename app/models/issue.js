@@ -1,5 +1,3 @@
-App = require('app');
-
 module.exports =  App.Issue = DS.Model.extend({
     type: DS.attr('string'),
     subject: DS.attr('string'),

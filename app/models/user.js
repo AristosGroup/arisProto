@@ -19,7 +19,15 @@ module.exports =  App.User = DS.Model.extend({
         var email = this.get('email'),
             size = this.get('avatarSize');
 
-        return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=' + size;
+       /* var jqxhr = $.get( 'http://www.gravatar.com/avatar/' + md5(email) + '?s=' + size+'&d=404', function() {
+            alert( "success" );
+        })
+
+            .fail(function() {
+                alert( "error" );
+            });*/
+
+        return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=' + size+'&d=404';
     }.property('email', 'avatarSize')
 });
 

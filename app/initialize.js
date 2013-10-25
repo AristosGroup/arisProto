@@ -111,7 +111,7 @@ require ('controllers/users');
 
 require ('mixins/list-view/main');
 
-require ('helpers/avatar');
+require ('helpers/user-avatar');
 
 // ===== Templates =====
 require ('templates/application');
@@ -122,3 +122,4 @@ require ('templates/pull-to-refresh');
 require ('templates/loading');
 require ('templates/issue/loading');
 require ('templates/error');
+require ('templates/components/avatar');
