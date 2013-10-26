@@ -9,6 +9,8 @@ App.Store = DS.Store.extend({
 });
 
 
+
+
 /**
  *
  * rewrite Rest Adapter
@@ -33,13 +35,15 @@ App.Store = DS.Store.extend({
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({
 
-    host:'http://aris.proaristos.ru/api',
-   /* serializer: App.serializer.create(),*/
+  //  host:'http://aris.proaristos.ru/api',
+   host:'http://aris.proaristos.ru:3000/aris',
+
+
     suffix:false,
     bulkCommit: false,
 
     headers: {
-        "X-Redmine-API-Key": "1ba9eddec017876adbb2156aafccdc027791bda0"
+        // "X-Redmine-API-Key": "1ba9eddec017876adbb2156aafccdc027791bda0"
         //  "X-Redmine-Nometa":1
 
     },
@@ -121,4 +125,4 @@ require ('templates/sidebar');
 require ('templates/pull-to-refresh');
 require ('templates/loading');
 require ('templates/issue/loading');
-require ('templates/error');
+//require ('templates/error');

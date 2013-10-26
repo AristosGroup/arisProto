@@ -7,20 +7,29 @@ module.exports = App.IssuesController = Ember.ArrayController.extend({
 
 
     actions: {
-        new: function () {
+        new: function (prevIssue) {
             var store = this.get('store');
 
-            var issue = store.push('issue', {
-                id: Math.floor(Math.random() * 1000),
-                subject: '',
-                status: 2
+            if(prevIssue)
+            {
+                prevIssue.save();
+            }
+                var issue = store.createRecord('issue',{
 
+             //   status:"1"
             });
 
-            issue.save();
+            // store.push('issue'issue);
+
+            var self = this;
+            issue.save().then(function(){
+                console.log(issue.get('id'));
 
 
-            this.transitionTo('issue', issue);
+                self.transitionTo('issue', issue);
+            });
+
+
 
         },
 
